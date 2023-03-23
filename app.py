@@ -1,6 +1,6 @@
 from flask import Flask, render_template, session
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 app.secret_key = 'YOUR_SECRET_KEY'
 
 @app.route('/')
