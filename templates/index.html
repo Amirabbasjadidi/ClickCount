@@ -6,7 +6,7 @@
     <script src="{{ url_for('static', filename='animation.js') }}"></script>
   </head>
   <body>
-    <p>تعداد کلیک‌ها: <span id="click-count">{{ count }}</span></p>
+    <p>تعداد باش: <span id="click-count">{{ count }}</span></p>
     <button id="bash-btn">باش</button>
     <audio id="audio-template">
       <source src="{{ url_for('static', filename='bash.mp3') }}" type="audio/mpeg">
