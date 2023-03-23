@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>باش</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='animation.js') }}"></script>
+  </head>
+  <body>
+    <p>تعداد کلیک‌ها: <span id="click-count">{{ count }}</span></p>
+    <button id="bash-btn">باش</button>
+    <audio id="audio-template">
+      <source src="{{ url_for('static', filename='bash.mp3') }}" type="audio/mpeg">
+    </audio>
+    <script>
+      var playBtn = document.getElementById("bash-btn");
+      var clickCount = {{ count }};
+      var audioElements = [];
+      
+      function createAudioElements() {
+        var audioTemplate = document.getElementById("audio-template");
+        for (var i = 0; i < 3; i++) {
+          var audio = audioTemplate.cloneNode(true);
+          audio.id = "audio" + i;
+          document.body.appendChild(audio);
+          audioElements.push(audio);
+        }
+      }
+      
+      function playAudio() {
+        var audio = audioElements[clickCount % audioElements.length];
+        audio.play();
+      }
+  
+      function updateClickCount() {
+        clickCount += 1;
+        var countElement = document.getElementById("click-count");
+        countElement.innerHTML = clickCount;
+        localStorage.setItem('clickCount', clickCount);
+      }
+  
+      function animateButton() {
+        playBtn.classList.add("animated");
+        setTimeout(function() {
+          playBtn.classList.remove("animated");
+        }, 500);
+      }
+  
+      playBtn.addEventListener("click", function() {
+        playAudio();
+        animateButton();
+        updateClickCount();
+      });
+      
+      window.onload = function() {
+        createAudioElements();
+        var savedCount = localStorage.getItem('clickCount');
+        if (savedCount) {
+          clickCount = parseInt(savedCount);
+          var countElement = document.getElementById("click-count");
+          countElement.innerHTML = clickCount;
+        }
+      }
+    </script>
+  </body>
+</html>
