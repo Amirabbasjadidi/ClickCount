@@ -1,0 +1,90 @@
+/* راست چین کردن صفحه */
+body {
+  direction: rtl;
+}
+
+@font-face {
+  font-family: 'Vazirmatn Bold';
+  src: url('/static/Vazirmatn-Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Vazirmatn Bold', sans-serif;
+}
+
+button {
+  font-family: 'Vazirmatn-Bold', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+/* تنظیم بک‌گراند */
+body {
+  background-color: #000;
+}
+
+button {
+  background-color: black;
+  color: white;
+  text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+
+body {
+  color: #fff;
+}
+
+
+/* تنظیم دکمه باش */
+button {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  font-size: 48px;
+  margin: auto;
+  display: block;
+  background-color: orange;
+  animation-name: pulse;
+  animation-duration: 0.5s;
+}
+
+/* تنظیم اعداد تعداد کلیک ها */
+p {
+  font-size: 48px;
+  text-align: center;
+}
+
+/* تنظیم انیمیشن برای بزرگ شدن دکمه */
+#bash-btn.animate {
+  animation-name: pulse-btn;
+  animation-duration: 0.3s;
+}
+
+/* تنظیم انیمیشن برای کوچک شدن دکمه */
+#bash-btn.animated:focus {
+  animation-name: pulse-btn;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  transform: scale(1);
+}
+
+/* تعریف انیمیشن pulse-btn برای دکمه */
+@keyframes pulse-btn {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.2);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+footer {
+  color: orange;
+}
+
+
