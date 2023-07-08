@@ -1,4 +1,3 @@
-/* راست چین کردن صفحه */
 body {
   direction: rtl;
 }
@@ -21,7 +20,6 @@ button {
 }
 
 
-/* تنظیم بک‌گراند */
 body {
   background-color: #000;
 }
@@ -37,7 +35,6 @@ body {
 }
 
 
-/* تنظیم دکمه باش */
 button {
   border-radius: 50%;
   width: 200px;
@@ -50,19 +47,16 @@ button {
   animation-duration: 0.5s;
 }
 
-/* تنظیم اعداد تعداد کلیک ها */
 p {
   font-size: 48px;
   text-align: center;
 }
 
-/* تنظیم انیمیشن برای بزرگ شدن دکمه */
 #bash-btn.animate {
   animation-name: pulse-btn;
   animation-duration: 0.3s;
 }
 
-/* تنظیم انیمیشن برای کوچک شدن دکمه */
 #bash-btn.animated:focus {
   animation-name: pulse-btn;
   animation-duration: 0.3s;
@@ -71,7 +65,6 @@ p {
   transform: scale(1);
 }
 
-/* تعریف انیمیشن pulse-btn برای دکمه */
 @keyframes pulse-btn {
   0% {
       transform: scale(1);
