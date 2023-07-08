@@ -16,5 +16,4 @@ in the static/style.css file to
 body {
   direction: ltr;
 }
-
 ```
